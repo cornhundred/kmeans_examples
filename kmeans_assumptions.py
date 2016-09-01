@@ -47,8 +47,12 @@ y_pred = KMeans(n_clusters=10, random_state=random_state).fit_predict(X_filtered
 
 # how to get centroids of clusters
 
-kmeans = KMeans(n_clusters=10, random_state=random_state).fit(X_filtered)
+#######################################################################
+# I could do some downsampling of the MNIST data into
+#
+#######################################################################
 
+kmeans = KMeans(n_clusters=10, random_state=random_state).fit(X_filtered)
 centroids = kmeans.cluster_centers_
 
 print(centroids)
