@@ -43,6 +43,9 @@ plt.title("Anisotropicly Distributed Blobs")
 
 # Unevenly sized blobs
 X_filtered = np.vstack((X[y == 0][:500], X[y == 1][:100], X[y == 2][:10]))
+
+print(X_filtered.shape)
+
 y_pred = KMeans(n_clusters=10, random_state=random_state).fit_predict(X_filtered)
 
 # how to get centroids of clusters
@@ -52,7 +55,7 @@ y_pred = KMeans(n_clusters=10, random_state=random_state).fit_predict(X_filtered
 #
 #######################################################################
 
-kmeans = KMeans(n_clusters=10, random_state=random_state).fit(X_filtered)
+kmeans = KMeans(n_clusters=20, random_state=random_state).fit(X_filtered)
 centroids = kmeans.cluster_centers_
 
 print(centroids)
